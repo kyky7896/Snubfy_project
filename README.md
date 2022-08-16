@@ -1,1 +1,1 @@
-# Snubpy_project
+# Snupfy_project
