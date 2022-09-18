@@ -1,6 +1,6 @@
 # Snupfy_project
 
-##SNuBFY : Search for Nutrient-Based Food for You
+## SNuBFY : Search for Nutrient-Based Food for You
 ---
 
 ### 팀원 경력
