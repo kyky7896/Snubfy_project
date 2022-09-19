@@ -1,0 +1,189 @@
+ {% extends 'index.html' %}
+{% block content %}
+<div class="cart-wrap">
+    <h3>Cart</h3>
+    <div class="cart-content">
+        <div class="cart-box">
+            <div class="select-all-wrap">
+                <label class="select-all">
+                    <input type="checkbox"> <span>Select All</span>
+                </label>
+            </div>
+            <div class="cart-box-select">
+                <div>
+                    <h4><span> Product </span></h4>
+                    <!--       상품명 시작(for문 시작)       -->
+                {% if g.user %}
+                    {% for item in cart_list %}
+                    <ul>
+                        <li class="cart-desc">
+                            <div class="cart-partial">
+                                <input type="checkbox" name="" id="">
+                            </div>
+                    <!--    이미지 들어가는 부분     -->
+                            <a class="cart-img-wrap">
+                                <img src="/static/uploads/{{ item.product.image }}">
+                            </a>
+                    <!--      상품명                -->
+                            <div class="cart-prod-name">
+                                <span> {{ item.product.product_name }}</span>
+                            </div>
+                     <!--   상품수량 올리기/내리기    -->
+                            <div class="cart-prod-amount">
+                                {{ item.cart_amount }}
+                            </div>
+                            <div class="cart-prod-price">
+                                <span>{{ item.product.price }}$</span>
+                            </div>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                {% endif %}
+                    <!--       for문 끝날부분             -->
+                    <!--          영양소 들어갈 부분          -->
+                    <div class="detail-nutri-wrap">
+                        <div class="detail-nutri">
+                            <dl>
+                                <dt>energy</dt>
+                                <dd> {{ user1_n_prct[0] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>Carbon</dt>
+                                <dd> {{ user1_n_prct[1] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>sugar</dt>
+                                <dd> {{ user1_n_prct[2] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>protein</dt>
+                                <dd> {{ user1_n_prct[3] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>fat</dt>
+                                <dd> {{ user1_n_prct[4] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>water</dt>
+                                <dd> {{ user1_n_prct[5] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>vitamin-a</dt>
+                                <dd> {{ user1_n_prct[6] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>vitamin-b6</dt>
+                                <dd> {{ user1_n_prct[7] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>vitamin-b12</dt>
+                                <dd> {{ user1_n_prct[8] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>vitamin-c</dt>
+                                <dd> {{ user1_n_prct[9] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>vitamin-d</dt>
+                                <dd> {{ user1_n_prct[10] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>Na</dt>
+                                <dd> {{ user1_n_prct[11] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>Ca</dt>
+                                <dd> {{ user1_n_prct[12] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>P</dt>
+                                <dd> {{ user1_n_prct[13] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>Mg</dt>
+                                <dd> {{ user1_n_prct[14] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>K</dt>
+                                <dd> {{ user1_n_prct[15] }} </dd>
+                            </dl>
+                            <dl>
+                                <dt>CI</dt>
+                                <dd> {{ user1_n_prct[16] }} </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- 상품 추천 -->
+                    <div class="prod-recomm-wrap">
+                        <h2>Picked for you</h2>
+                        <div class="prod-recomm">
+                    <!--   for문 시작     -->
+                            {% for item in user1_rec_prdc %}
+                     <!--       추천1시작        -->
+                                <div class="prod-recomm-5">
+                                    <div class="product-img-wrap">
+                                        <a><img src="/static/uploads/{{ item['image'] }}"></a>
+                                    </div>
+                                    <div class="prod-content">
+                                        <a>
+                                            <span class="prod-title">{{ item['product_name'] }}</span>
+                                            <span class="prod-price">{{ item['price'] }} </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                    <!--    for문 종료         -->
+                        </div>
+                    </div>
+                <!--       상품추천 종료          -->
+                </div>
+            </div>
+        </div>
+        <div class="cart-order">
+            <div class="cart-addr-wrap">
+                <h4>Delivery Address</h4>
+                <div class="cart-addr">
+                    <input type="text" name="address_1" class="address_1" id="address_1" onclick="findArr()">
+                    <input type="text" name="address_2" class="address_2" id="address_2">
+                </div>
+            </div>
+            <div class="cart-tot-p-wrap">
+                <!--  상품금액  -->
+                <div class="cart-prod-p">
+                    <span>
+
+                    </span>
+                    <span>
+                        {{ cart_prod_p }}
+                        <span>$</span>
+                    </span>
+                </div>
+                <!--  배송비  -->
+                <div class="cart-prod-sp">
+                    <span>
+                        shipping fee
+                    </span>
+                    <span>
+                        +
+                        10
+                        <span>$</span>
+                    </span>
+                </div>
+                <!--    결제 예청금액     -->
+                <div class="cart-prod-tot-p pay">
+                    <span>
+                        SubTotal
+                    </span>
+                    <span>
+                          {{ cart_prod_tot_p }}
+                        <span>$</span>
+                    </span>
+                </div>
+            </div>
+            <div class="cart-order-button">
+                <button class="button-signup" onclick="location.href='{{ url_for('cart.order_product') }}'"> Order </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

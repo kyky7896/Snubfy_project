@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="mypage-container">
+    <!--  마이페이지 카테고리부분  -->
+
+    {% include '/html/product/product_cate.html' %}
+
+    <!--  마이페이지 회원정보 수정 부분  -->
+    <div class="mypage-box">
+        <div class="mypage-box">
+        <div class="mypage-title">
+            <h2>개인정보 수정</h2>
+        </div>
+        <div class="mypage-box-1">
+            <div class="required">
+                <span>*</span>
+                필수입력사항
+            </div>
+            <!--      아이디, 비밀번호 등 입력사항      -->
+            <!--      폼 start      -->
+            <form action="">
+                <div class="mypage-id-box">
+                    <div class="id-name">
+                        <label> 아이디 <span>*</span></label>
+                    </div>
+                    <div class="id-inputbox" >
+                        <!-- 넘어온 id를 value값 입력 후 readonly-->
+                        <input type="text" name="id" class="id" id="id" readonly>
+                    </div>
+                </div>
+                <div class="mypage-pwd-box">
+                    <div class="pwd-name">
+                        <label> 비밀번호 <span>*</span></label>
+                    </div>
+                    <div class="pwd-inputbox">
+                        <input type="password" name="pwd" class="pwd" id="pwd" >
+                    </div>
+                </div>
+                <div class="mypage-pwdcheck">
+                    <div class="pwdcheck-name">
+                        <label> 비밀번호확인 <span>*</span></label>
+                    </div>
+                    <div class="pwdcheck-inputbox">
+                        <input type="password" name="pwdcheck" class="pwdcheck" id="pwdcheck"  onkeyup="pwdCheck()" >
+                    </div>
+                    <div class="pwdcheck-title">
+                        <span id="confirm_msg"></span>
+                    </div>
+                </div>
+                <div class="mypage-p-box">
+                    <div class="p-name">
+                        <label> 이름 <span>*</span></label>
+                    </div>
+                    <div class="p-inputbox">
+                        <input type="text" name="name" class="name" id="name">
+                    </div>
+                </div>
+                <div class="mypage-email-box">
+                    <div class="email-name">
+                       <label> 이메일 <span>*</span></label>
+                    </div>
+                    <div class="email-inputbox">
+                       <input type="text" name="email" class="email" id="email" >
+                    </div>
+                </div>
+                <div class="mypage-ph-box">
+                    <div class="ph-name">
+                       <label> 휴대폰 <span>*</span></label>
+                    </div>
+                    <div class="ph-inputbox">
+                      <input type="text" name="phnum" class="phnum" id="phnum" >
+                    </div>
+                </div>
+                <div class="mypage-add-box" style="height: 120px">
+                    <div class="add-name">
+                        <label> 주소 <span>*</span></label>
+                    </div>
+                    <div class="add-inputbox">
+                            <!--           주소가 2개 넘길때 주의            -->
+                        <input type="text" name="address_1" class="address_1" id="address_1" placeholder="주소를 입력해주세요" onclick="findArr()">
+                        <input type="text" name="address_2" class="address_2" id="address_2" placeholder="나머지 주소를 입력해주세요">
+                    </div>
+                </div>
+                <div class="mypage-gen-box">
+                    <div class="gen-name">
+                        <label> 성별 <span>*</span></label>
+                    </div>
+                    <div class="gen-inputbox">
+                        <input type="radio" id="male" name="gender"><label for="male">남자</label>
+                        <input type="radio" id="female" name="gender"><label for="female">여자</label>
+                    </div>
+                </div>
+                <div class="mypage-rnum-box">
+                    <div class="rnum-name">
+                        <label> 주민번호 <span>*</span></label>
+                    </div>
+                    <div class="rnum-inputbox">
+                        <input type="text" name="rnum" class="rnum" id="rnum" readonly >
+                    </div>
+                </div>
+                <!--      bottom_line      -->
+                <div class="bline">
+                </div>
+            </div>
+            <!--    약관동의    -->
+            <div class="mypage-box-2">
+            </div>
+            <!--   탈퇴 & 수정 버튼     -->
+            <div class="mypage-box-3">
+                <button onclick=""> 탈퇴하기 </button>
+                <button type="submit"> 수정하기 </button>
+            </div>
+        <!--    폼 end    -->
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

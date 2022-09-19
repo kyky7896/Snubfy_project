@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="login-wrap">
+    <div class="login-box-1">
+        <div class="login-title">
+            <h2>SIGN IN</h2>
+        </div>
+        <div class="login-box-2">
+            <form action="{{ url_for('member.login') }}" method="POST">
+                {{ form.csrf_token }}
+                <div class="login-box-id-pwd">
+                <input type="text" name="id" class="id" name="id" style="width:500px;height:50px" placeholder="Enter your ID">
+                <input type="password" name="pwd" class="pwd" name="pwd" style="width:500px;height:50px;font-size:14px;border:1px solid#3f48cc" placeholder="Enter your password">
+                </div>
+                <div class="login-sign">
+                    <button class="button-login" type="submit" onclick="{{ url_for('header_footer.main') }}"> submit </button>
+                </div>
+            </form>
+            <div class="login-sign">
+            <button class="button-signup" onclick="location.href='{{ url_for('member.signup') }}'" > signup </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+<!--  main.css 넣어줘야함 -->
+<!-- -------------전체적인 헤더 ------------------ -->
+<div class="container">
+        <!-- jinja로 들어가야할 부분  -->
+
+    <!--    로그인 되어있으면    -->
+    {% if g.user %}
+        {% include '/html/header_footer/afterlogin.html' %}
+    {% else %}
+        <!--  로그인 안되어있으면  -->
+        {% include '/html/header_footer/nologin.html' %}
+    {% endif %}
+
+    <!--    로고부분     -->
+    <div class="navbar">
+        <div class="logo" onclick="">
+            <a href="{{ url_for('header_footer.main') }}"><img src="/static/images/snubfy.png" width="125px"></a>
+        </div>
+            <button class="logo-1">SNUBFY</button>
+            <input type="text" class="product_name" placeholder="Enter Keyword to Search">
+        <nav>
+            <ul>
+                <li><a href="#"><img src="/static/images/heart.png"></a></li>
+                <li><a href="{{ url_for('cart.mycart') }}"><img src="/static/images/shop.png"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+<!-- ------3단 메뉴바 설정 ------ -->
+    <div class="header">
+        <div class="header-1">
+            <div class="cat-box" id="cat">
+                <img src="/static/images/whitemenu.png">
+                    <div class="cat">
+                        <ul class="cat-1">
+                            <li href="#"><a href="#" style="color:whitesmoke">CATEGORY</a>
+                                <ul class="cat-2">
+                                    <li><a href="{{ url_for('product._list', cart_num=1) }}">snacks</a>
+<!--                                       <ul class="cat-3">-->
+<!--                                            <li><a href="#">sub1-1</a></li>-->
+<!--                                            <li><a href="#">sub1-2</a></li>-->
+<!--                                            <li><a href="#">sub1-3</a></li>-->
+<!--                                        </ul>-->
+                                    </li>
+                                    <li><a href="{{ url_for('product._list', cart_num=2) }}">dairy eggs</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=3) }}">frozen</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=4) }}">beverages</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=5) }}">pantry</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=6) }}">produce</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=7) }}">bakery</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=8) }}">canned goods</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=9) }}">dry goods pasta</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=10) }}">deli</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=11) }}">breakfast</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=12) }}">meat seafood</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=13) }}">babies</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=14) }}">international</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=15) }}">alcohol</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=16) }}">personal care</a></li>
+                                    <li><a href="{{ url_for('product._list', cart_num=17) }}">snacks</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="header-2">
+                <ul>
+                    <li><a href="" style="color:whitesmoke">BEST</a></li>
+                    <li><a href="{{ url_for('recipe.recipe_list') }}" style="color:whitesmoke">RECIPE</a></li>
+                    <li><a href="" style="color:whitesmoke">...</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

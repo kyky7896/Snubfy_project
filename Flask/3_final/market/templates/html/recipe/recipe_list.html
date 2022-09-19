@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="recipe-box-wrap">
+    <div class="recipe-box-title">
+        <h2>Recipe</h2>
+    </div>
+    <div class="recipe-box-content">
+        {% if recipe_list %}
+        {% for recipe in recipe_list %}
+        <!--   레시피 list 시작     -->
+        <div class="recipe-box">
+            <div class="recipe-box-list">
+                <!--    레시피 이미지 들어갈 자리    -->
+                <div class="recipe-img-wrap">
+                    <a href="{{ url_for('recipe.recipe_detail', recipe_id=recipe.recipe_id )}}">
+                    <img src="/static/uploads_recipe/{{ recipe.recipe_image }}" alt="">
+                    </a>
+                </div>
+                    <!--    레시피 제목 들어갈 자리    -->
+                <div class="recipe-title">
+                    <a href="{{ url_for('recipe.recipe_detail', recipe_id=recipe.recipe_id )}}">
+                    <span>{{ recipe.recipe_name }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

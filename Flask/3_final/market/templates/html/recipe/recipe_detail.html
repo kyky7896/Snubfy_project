@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="re-det-box-wrap">
+    <div class="re-det-box-title">
+        <h2> Recipe detail </h2>
+    </div>
+    <div class="re-det-box-content">
+        <div class="b-line">
+        </div>
+        <!--    레시피 이름, 작성자 들어 가는 부분    -->
+        <div class="re-det-desc-1">
+            <div class="re-det-title">
+                <div class="re-det-title-1">
+                <span class="re-title"> Title </span>
+                <span class="re-content"> {{ recipe.recipe_name }} </span>
+                </div>
+                <div class="re-det-title-2">
+                <span class="re-title"> Writer </span>
+                <span class="re-content"> Administer </span>
+                </div>
+            </div>
+        </div>
+        <!--    재료, 레시피 순서 들어 가는 부분       -->
+        <div class="re-det-desc-2">
+            <div class="re-det-desc-title">
+                <span> Snubfy's Recipe </span>
+                <p> {{ recipe.recipe_name }}</p>
+            </div>
+            <div class="re-det-desc-content">
+                <div class="re-det-img">
+                    <img src="/static/uploads_recipe/{{ recipe.recipe_image }}">
+                </div>
+                <div class="re-det-desc">
+                    <div class="detail-ingre">
+                        <strong>Cooking time</strong>
+                        <p>{{ recipe.minutes }} minutes </p>
+                    </div>
+                    <div class="detail-orders">
+                        <strong>Recipe</strong>
+                        {% set steps = recipe.steps.split("','") %}
+                        {% for s in steps %}
+                        <p>{{ loop.index }}. {{ s | replace("'","") }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="re-det-box-recomm">
+        <h2> Recipe items</h2>
+        <div class="slider-recipe-recomm">
+            <!--     for문 시작부분       -->
+            {% for rein in recipe.recipe_ingredients %}
+            {% for product in rein.ingred.product %}
+            {% if loop.index < 3 %}
+            <div class="recipe-recomm-1">
+                <div class="recipe-recomm-img">
+                    <a href="{{ url_for('product.detail', product_id=product.product_id) }}"><img src="/static/uploads/{{ product.image }}"></a>
+                </div>
+                <div class="recipe-recomm-desc">
+                        <a href="{{ url_for('product.detail', product_id=product.product_id) }}"><span class="recomm-title">{{ product.product_name }}</span></a>
+                        <a href="{{ url_for('product.detail', product_id=product.product_id) }}"><span class="recomm-content">{{ product.price }} $ </span></a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

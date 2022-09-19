@@ -1,0 +1,68 @@
+
+/* 광고 슬라이더 */
+
+.slider-wrap {
+    width: 1050px;
+    margin: 0 auto;
+}
+.slider{
+    width: 100%;
+    min-width: 1050px;
+    height: 370px;
+    background-color: #c3c7ea;
+    position: relative;
+
+}
+
+.slider .col-3 {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid black;
+    width: 100%;
+    height: 370px;
+}
+
+.slider .col-3 a img{
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+    padding: 0;
+}
+
+/* 메인 슬라이더 */
+.categories h1 {
+    display: block;
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+.slider-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-1 .col-8{
+    display: inline-block;
+}
+
+.slider-1 .col-8 img {
+    width: calc(335px*0.7);
+    height: 300px;
+    padding: 0;
+}
+
+.slider-1 .col-8 .content {
+    padding-top: 14px 10px 0px 0px;
+}
+.slider-1 .col-8 .content .product-name {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 8px 0 8px;
+}
+
+.slider-1 .col-8 .content .content-price {
+    font-size: 14px;
+    font-weight: 800;
+
+}
+

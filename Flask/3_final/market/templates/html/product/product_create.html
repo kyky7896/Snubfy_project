@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="prod-up-wrap">
+    <div class="mypage-container">
+    <!--  마이페이지 카테고리부분  -->
+
+    {% include '/html/product/product_cate.html' %}
+
+    <div class="prod-up-wrap">
+        <div class="prod-up-title">
+            <h2> Add Product </h2>
+        </div>
+        <div class="bline"></div>
+            <form action="{{ url_for('product.create') }}" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                <div class="prod-up-content">
+                    <div class="prod-name-wrap">
+                        <label for="product_name"> Product Name </label>
+                        <input type="text" name="product_name" id="product_name" class="pnum">
+                    </div>
+
+                    <div class="prod-price-wrap">
+                        <label for="price"> Price </label>
+                        <input type="number" name="price" id="price" class="price">
+                    </div>
+
+                    <div class="prod-desc-wrap">
+                        <label for="detail">Description </label>
+                        <input type="text" name="detail" id="detail" class="detail">
+                    </div>
+
+                    <div class="prod-desc-wrap">
+                        <label for="category">Category </label>
+                        <select name="cart_num" id="category">
+                            <option value="0">Choose one</option>
+                            {% for cat in category_set %}
+                            <option value="{{ loop.index }}">{{ cat }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="prod-img-wrap">
+                        <label for="input-image">Image</label>
+                        <div class="prod-file">
+                            <input type="file" name="image" id="input-image" class="image">
+                            <div class="img-container">
+                                <img src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image" id="preview-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-regis">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

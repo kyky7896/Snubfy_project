@@ -1,0 +1,213 @@
+.prod-detail-wrap{
+    width: 100%;
+    position: relative;
+}
+
+.prod-detail {
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+    padding-top: 30px;
+}
+
+.prod-update{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    margin:10px;
+}
+
+.prod-detail-box {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Noto Sans";
+}
+
+.prod-detail-img {
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    width: calc(430px*0.8);
+    height: calc(552px*0.8);
+}
+
+.prod-detail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prod-detail-desc {
+    width: 650px;
+}
+
+.detail-title > div:first-child > h2 {
+    text-align: left;
+}
+.detail-price {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 19px;
+    font-weight: bold;
+    line-height: 30px;
+    letter-spacing: -0.5px;
+}
+.detail-desc h4 {
+    margin-top: 20px;
+}
+
+.detail-nutri {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.detail-nutri dl{
+    width: 90px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding: 10px;
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+}
+
+.detail-nutri dl dt {
+    width: 100%;
+    height: 100%;
+}
+
+.detail-select-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 17px 0px 18px;
+    border-top: 1px solid rgb(244, 244, 244);
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.detail-select-title dt{
+    margin-right: 20px;
+}
+
+.amount{
+    width: 150px;
+    height: 30px;
+}
+
+.tot-price-box {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.tot-price {
+    font-weight: bold;
+    font-size: 32px;
+    color: rgb(51, 51, 51);
+    line-height: 36px;
+}
+
+.b-line {
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+}
+
+.cart-in {
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.cart-in button {
+    width: 250px;
+    background-color: var(--main-bg-color);
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+}
+
+
+/* 같이 구매한 리스트 */
+.pur-tog-wrap{
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.pur-tog-wrap h2{
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.pur-tog-recomm-5 {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pur-tog-img {
+    /*margin-left: 20px;*/
+    width: 178px;
+    height: 229px;
+    margin: 0 auto;
+}
+
+.pur-tog-img a img {
+    width: 100%;
+    height: 100%;
+}
+
+.pur-tog-content {
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.pur-tog-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4c4c4c;
+    line-height: 18px;
+}
+
+
+
+/* 관련 레시피 리스트 */
+
+.related-reci-wrap{
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.related-reci-wrap h2{
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+reci-image-wrap {
+    width: 178px;
+    margin: 0 auto;
+}
+
+.reci-image-wrap a img {
+    width: 100%;
+    height: 320px;
+}
+.related-reci-recomm-5 a {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+

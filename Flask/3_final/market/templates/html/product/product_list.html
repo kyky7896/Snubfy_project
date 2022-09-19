@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- --------- product_list --------- -->
+<div>
+    {% if category %}
+    <div class="prods-wrap">
+        {% if small_cat %}
+        <h3> {{ small_cat[1].department }} </h3>
+        <ul class="prods-cat">
+            {% for sc in small_cat %}
+            {% if sc.aisle != None %}
+            <li><a href="{{ url_for('product.aisle_list', cart_num=sc.cart_num , aisle_id=sc.aisle_id ) }}">{{ sc.aisle }}</a></li>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+        </ul>
+        <div class="b-line">
+            <div class="total-p-num">
+            </div>
+        </div>
+        <!--    첫번째 상품 시작     -->
+        <div class="prods-box">
+
+        {% for cat in category %}
+            <div class="prods-content">
+                <div class="prod-img">
+                    <div class="prod-img-box">
+                        <img src="/static/uploads/{{ cat.product.image }}" onclick="location.href='{{ url_for('product.detail', product_id=cat.product.product_id) }}'">
+                    </div>
+                </div>
+                <div class="prod-desc">
+                    <div class="prod-desc-title">
+                        {{ cat.product.product_name }}
+                    </div>
+                    <div class="prod-desc-price">
+                        <span>{{ cat.product.price}} $ </span>
+                    </div>
+                    <p class="prod-brief">
+                       This is {{ cat.product.detail }} .
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+        {% endif %}
+         <!--    첫번째 상품 끝     -->
+        </div>
+    </div>
+</div>
+{% endblock %}

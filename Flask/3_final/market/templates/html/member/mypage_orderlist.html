@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="mypage-container">
+    <!--  마이페이지 카테고리부분  -->
+
+    {% include '/html/product/product_cate.html' %}
+
+  <!-- 주문 목록 부분 -->
+<div class="order-box-wrap">
+  <div class="order-box">
+    <div class="order-title">
+        <div class="order-title-1">
+              <h2>Order History</h2>
+              <span></span>
+        </div>
+    </div>
+    <div class="order-line"></div>
+    <div class="order-content-wrap">
+        <!--    주문목록이 없는 신규회원의경우    -->
+            {% if not order_list %}
+         <div class="order-content">
+             {{ error }}
+         </div>
+        <!--for문 들어갈 자리-->
+            {% else %}
+            {% for order in order_list %}
+        <div class="order-content">
+            <div class="order-content-title">
+                <span> -- </span>
+                <a href="{{ url_for('member.myorderdetail', order_num=order.order_id) }}" class="order_detail">Order details</a>
+            </div>
+            <div class="order-content-list">
+                <div class="ordlist-1">
+                    <div class="ordlist-img">
+                        <a href="{{ url_for('member.myorderdetail', order_num=order.order_id) }}">
+                        <img src="/static/uploads/{{ order.order_detail[0].product.image }}">
+                        </a>
+                    </div>
+                    {% for i in range(1) %}
+                    <div class="ordlist-content">
+                        <dl>
+                            <dt>Product Name</dt>
+                            <dd> {{ order.order_detail[i].product.product_name }} 외 {{ order.order_detail | length -1}}개</dd>
+                        </dl>
+                        <dl>
+                            <dt>Order Id</dt>
+                            <dd>{{ order.order_id }}</dd>
+                        </dl>
+                        <dl>
+
+                            <dt>Payment Amount</dt>
+                            <dd>
+                                <!-- Jinja는 += 안됨 , 들여쓰기 없음. -->
+                                {% set lists=[] %}
+                                {% set prices=0 %}
+                                {% for od in (order.order_detail) %}
+                                    {% set prices = prices + ( od.pamount * od.product.price ) %}
+                                    {{ lists.append(prices) or '' }}
+                                {% endfor %}
+                                {{ lists | sum() | round(3) }} $
+
+                                </dd>
+                        </dl>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="ordlist-2">
+                    <span>Payment Completed</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

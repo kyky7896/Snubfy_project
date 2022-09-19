@@ -1,0 +1,11 @@
+<div class="nav--upper">
+    <div class="login">
+        <a>{{ g.user.id }} ( {{ g.user.admin }} ) LOGIN... </a>
+    </div>
+    <div class="logout">
+        <a href="{{ url_for('member.logout_page') }}"> LOGOUT </a>
+    </div>
+    <div class="service_center">
+        <a href="{{ url_for('member.myorder') }}"> MYPAGE </a>
+    </div>
+</div>
