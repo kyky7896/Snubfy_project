@@ -1,0 +1,136 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="signup-wrap">
+    <div class="signup-box">
+        <div class="signup-title">
+            <h2>Sign up</h2>
+        </div>
+        <div class="signup-box-1">
+            <div class="required">
+                <span>*</span>
+                required
+            </div>
+            <!--      아이디, 비밀번호 등 입력사항      -->
+            <!--      폼 start      -->
+            <form action="{{ url_for('member.signup') }}" method="POST">
+               <!-- 오류표시 Start -->
+                {% if form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for field, errors in form.errors.items() %}
+                    <strong>{{ form[field].label }}</strong>
+                    <ul>
+                        {% for error in errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <!-- 오류표시 End -->
+                {{ form.csrf_token }}
+                <div class="signup-id-box">
+                    <div class="id-name">
+                        <label> ID <span>*</span></label>
+                    </div>
+                    <div class="id-inputbox">
+                        <input type="text" name="id" class="id" id="id" placeholder="ID">
+                    </div>
+                    <div class="id-button-check">
+                        <button onclick="">ID CHECK</button>
+                    </div>
+                </div>
+                <div class="signup-pwd-box">
+                    <div class="pwd-name">
+                        <label> PASSWORD <span>*</span></label>
+                    </div>
+                    <div class="pwd-inputbox">
+                        <input type="password" name="pwd" class="pwd" id="pwd" placeholder="PASSWORD">
+                    </div>
+                </div>
+                <div class="signup-pwdcheck">
+                    <div class="pwdcheck-name">
+                        <label> PASS CHECK <span>*</span></label>
+                    </div>
+                    <div class="pwdcheck-inputbox">
+                        <input type="password" name="pwdcheck" class="pwdcheck" id="pwdcheck" placeholder="PASSWORD CHECK" onkeyup="pwdCheck()">
+                    </div>
+                    <div class="pwdcheck-title">
+                        <span id="confirm_msg"></span>
+                    </div>
+                </div>
+                <div class="signup-p-box">
+                    <div class="p-name">
+                        <label> NAME <span>*</span></label>
+                    </div>
+                    <div class="p-inputbox">
+                        <input type="text" name="name" class="name" id="name" placeholder="NAME">
+                    </div>
+                </div>
+                <div class="signup-email-box">
+                    <div class="email-name">
+                        <label> E-MAIL <span>*</span></label>
+                    </div>
+                    <div class="email-inputbox">
+                        <input type="text" name="email" class="email" id="email" placeholder="EMAIL">
+                    </div>
+                </div>
+                <div class="signup-ph-box">
+                    <div class="ph-name">
+                        <label> PHONE <span>*</span></label>
+                    </div>
+                    <div class="ph-inputbox">
+                        <input type="text" name="phnum" class="phnum" id="phnum" placeholder="PHONE NUMBER">
+                    </div>
+                </div>
+                <div class="signup-add-box" style="height: 120px">
+                    <div class="add-name">
+                        <label> ADDRESS <span>*</span></label>
+                    </div>
+                    <div class="add-inputbox">
+                        <!--           주소가 2개 넘길때 주의            -->
+                        <input type="text" name="address_1" class="address_1" id="address_1" placeholder="ADDRESS" onclick="findArr()">
+                        <input type="text" name="address_2" class="address_2" id="address_2" placeholder="ADDRESS">
+                    </div>
+                </div>
+                <div class="signup-gen-box">
+                    <div class="gen-name">
+                        <label> GENDER <span>*</span></label>
+                    </div>
+                    <div class="gen-inputbox">
+                        <input type="radio" value="male" name="gender" id="male"><label for="male">MALE</label>
+                        <input type="radio" value="female" name="gender" id="female"><label for="female">FEMALE</label>
+                    </div>
+                </div>
+                <div class="signup-rnum-box">
+                    <div class="rnum-name">
+                        <label> REGISTRATION NUMBER <span>*</span></label>
+                    </div>
+                    <div class="rnum-inputbox">
+                        <input type="text" name="rnum" class="rnum" id="rnum" placeholder="REGISTRATION NUMBER(EX. 930814)">
+                    </div>
+                </div>
+                <div class="signup-admin-box">
+                    <div class="admin-name">
+                        <label> ADMIN <span>*</span></label>
+                    </div>
+                    <div class="admin-inputbox">
+                        <input type="radio" id="administer" value="administer" name="admin"><label for="administer">ADMIN</label>
+                        <input type="radio" id="member" value="member" name="admin"><label for="member">MEMBER</label>
+                    </div>
+                </div>
+                <!--      bottom_line      -->
+                <div class="bline">
+                </div>
+            <!--    약관동의    -->
+            <!--            <div class="signup-box-2">-->
+            <!--            </div>-->
+            <!--   가입 버튼     -->
+            <div class="signup-box-3">
+                <button type="submit" class="button-signup"> SUBMIT </button>
+            </div>
+            <!--    폼 end    -->
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

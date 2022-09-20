@@ -1,0 +1,47 @@
+/*-----------마이 페이지 카테고리-------- */
+.mypage-container{
+    display: flex;
+    width: 1050px;
+    padding: 50px 0px 80px;
+    margin: 0px auto;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.mypage-cat{
+    width: 200px;
+}
+
+.mypage-cat-title h2{
+    height: 75px;
+    padding: 5px 0px 35px 5px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -1px;
+}
+
+.mypage-cat ul{
+        border: 1px solid rgb(242, 242, 242);
+}
+
+.mypage-cat ul li a{
+    cursor: pointer;
+    border-bottom: 1px solid rgb(242, 242, 242);
+    padding: 14px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+}
+
+
+
+

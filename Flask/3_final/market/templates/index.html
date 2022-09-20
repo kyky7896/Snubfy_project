@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 제이쿼리 & 슬라이더 cdn 코드 -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!--  다음 주소 코드  -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- css와 코드  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage_update.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage_orderlist.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage_orderdetail.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_list.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_detail.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe_list.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe_detail.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product_create.css')}}">
+
+    <!-- 자바스크립트 코드-->
+        <!--  slick 슬라이드   -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+        <!--  signup.html의 pwdcheck  -->
+    <script src="{{ url_for('static', filename='js/pwdcheck.js')}}"></script>
+        <!--  signup.html 과 cart.html(배송지 개인정보로 진행시 안넣어도됨)  -->
+    <script src="{{ url_for('static', filename='js/findarr.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/prefixfree.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/price_count.js')}}"></script>
+
+</head>
+<body>
+<!-- header 등록 -->
+{% include '/html/header_footer/header.html' %}
+<!--main -->
+<!-- 기본 콘텐츠 안에 삽입될 내용-->
+{% block content %}
+{% endblock %}
+<!--footer -->
+{% include '/html/header_footer/footer.html' %}
+<!-- product_create 에 이미지 업로드 - 미리보기 부분 js -->
+<script src="{{ url_for('static', filename='js/preview.js')}}"></script>
+</body>
+</html>

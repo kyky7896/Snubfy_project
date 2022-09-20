@@ -1,0 +1,22 @@
+
+    <!--  마이페이지 카테고리부분  -->
+    <div class="mypage-cat">
+        <div class="mypage-cat-title">
+            <h2>MY SNUB</h2>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('member.myorder') }}">Order History</a>
+            </li>
+        </ul>
+        <ul>
+            <li> <a href="">Edit Account</a>
+            </li>
+        </ul>
+        <!--    로그인하고 관리자일때 if문처리   -->
+        {% if g.user.admin == 'administer'%}
+        <ul>
+            <li> <a href="{{ url_for('product.create') }}">Add Product</a>
+            </li>
+        </ul>
+        {% endif %}
+    </div>

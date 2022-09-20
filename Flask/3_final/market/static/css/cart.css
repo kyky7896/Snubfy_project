@@ -1,0 +1,256 @@
+.cart-wrap{
+    width: 1050px;
+    margin: 0px auto;
+    padding-bottom: 80px;
+}
+
+.cart-wrap h3{
+    padding: 50px 0px 48px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.cart-content{
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+/* 장바구니 - 주문 부분 */
+
+.cart-box{
+    width: 742px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-order{
+    position: relative;
+    width: 284px;
+    min-height: 942px;
+}
+
+.select-all-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10px 16px 2px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+
+.select-all {
+    display: inline-flex;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 0;
+    color: #333;
+}
+
+.select-all span {
+    margin-left: 10px;
+}
+
+.cart-box-select > div:first-child h4 {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 60px;
+    padding: 15px 5px 15px 0px;
+    border-top: 1px solid rgb(51, 51, 51);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.cart-desc {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.cart-partial {
+    margin: 10px;
+}
+
+.cart-img-wrap {
+    display: inline-block;
+    width: 60px;
+    height: 78px;
+    margin-right: 20px;
+}
+
+.cart-img-wrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.cart-prod-name {
+    display: flex;
+    flex-direction: column;
+    width: 345px;
+    margin-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+.cart-prod-amount {
+    display: inline-flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid rgb(221, 223, 225);
+    width: 88px;
+    border-radius: 3px;}
+
+.p_amount {
+    width: 100%;
+    height: 25px;
+}
+.cart-prod-price {
+    display: flex;
+    flex-direction: column;
+    width: 127px;
+    text-align: right;
+    word-break: break-all;
+}
+
+/* 장바구니 - 영양소 부분 */
+.detail-nutri-wrap {
+    width: 600px;
+    height: auto;
+    margin-top: 20px;
+    float: right;
+}
+
+.detail-nutri {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.detail-nutri dl{
+    width: 90px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding: 10px;
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+}
+
+.detail-nutri dl dt {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 장바구니 - 배송지 부분*/
+
+.cart-addr-wrap {
+    padding: 23px 19px 20px;
+    border: 1px solid #f2f2f2;
+    border-bottom: 0;
+}
+
+.cart-addr {
+    padding-top: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+}
+
+.cart-addr input[type='text'] {
+    height:25px;
+    margin-top: 7px;
+    width: 100%
+}
+
+.cart-tot-p-wrap {
+    padding: 19px 18px 18px 20px;
+    border: 1px solid #f2f2f2;
+    background-color: #fafafa;
+}
+
+.cart-tot-p-wrap div {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.pay {
+    margin-top: 16px;
+    padding-top: 18px;
+}
+
+.cart-order-button button{
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 56px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: var(--main-bg-color);
+    border: 0 none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 상품추천 css */
+
+/* 추천 음식 리스트 */
+
+.prod-recomm-wrap{
+    width: inherit;
+    margin: 0px auto;
+    padding: 40px 0px;
+    clear: both;
+}
+
+.prod-recomm-wrap h2{
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.prod-recomm-5{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img-wrap {
+    width: 200px;
+    margin: 0 auto;
+    height: 220px;
+}
+
+.product-img-wrap a img {
+    width: 100%;
+    height: 100%;
+}
+.prod-content a {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.prod-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4c4c4c;
+    line-height: 18px;
+}

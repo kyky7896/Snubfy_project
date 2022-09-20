@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block content %}
+<!-- -------------- 광고 슬라이더 ------------- -->
+    <div class="slider-wrap">
+        <!-- 슬라이더 들어간 class : slider -->
+        <div class="slider">
+            <div class="col-3">
+                <img src="/static/images/ad.png" alt="">
+            </div>
+            <div class="col-3">
+                <img src="/static/images/apples.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img src="/static/images/healthad.jpg">
+            </div>
+        </div>
+    </div>
+
+
+<!-- ----------- 메인(리스트):슬라이더 -------------- -->
+
+    {% if g.user %}
+    <div class="categories">
+        <h1> {{ title }}</h1>
+        <div class="row">
+            <!-- 슬라이더 들어간 class : slider-1 -->
+            <div class="slider-1">
+                <!-- Jinja for문 시작 자리 -->
+                {% for p in prod_reco_list %}
+                <div class="col-8">
+                    <a href="{{ url_for('product.detail', product_id=p.product_id) }}">
+                    <img src="static/uploads/{{ p.image }}">
+                    </a>
+                    <div class="content">
+                        <h3 class="product-name">{{ p.product_name }}</h3>
+                        <h3 class="content-price">
+                            {{ p.price }} $
+                        </h3>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="categories">
+        <h1> Best seller Top 9 </h1>
+        <div class="row">
+            <!-- 슬라이더 들어간 class : slider-1 -->
+            <div class="slider-1">
+                <!-- Jinja for문 시작 자리 -->
+                {% for p in product_list %}
+                <div class="col-8">
+                    <a href="{{ url_for('product.detail', product_id=p.product_id) }}">
+                    <img src="static/uploads/{{ p.image }}">
+                    </a>
+                    <div class="content">
+                        <h3 class="product-name">{{ p.product_name }}</h3>
+                        <h3 class="content-price">
+                            {{ p.price }} $
+                        </h3>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

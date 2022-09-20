@@ -1,0 +1,201 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="prod-detail-wrap">
+    {% if product %}
+    <div class="prod-detail">
+        <!--    ///////관리자 로그인 했을때만 보이게 해주세요 //////    -->
+        {% if g.user.admin == 'administer' %}
+        <div class="prod-update">
+            <a href="{{ url_for('product.update', product_id=product.product_id) }}">Edit Product</a>
+        </div>
+        <!--  //////// 관리자로 로그인했을때만 보이게 해주세요 -끝//////     -->
+        {% endif %}
+        <article class="prod-detail-box">
+            <div class="prod-detail-img">
+                <img src="/static/uploads/{{ product.image }}" alt="">
+            </div>
+            <div class="prod-detail-desc">
+                <!--        상품 이름        -->
+                <div class="detail-title">
+                    <div>
+                    <h2> {{ product.product_name }} </h2>
+                    </div>
+                </div>
+                <!--        상품 가격        -->
+                <div class="detail-price">
+                    <h2 id="product_price">{{ product.price }}</h2>
+                </div>
+                <!--        상품 내용        -->
+                <div class="detail-desc">
+                    <h4>{{ product.product_name }} </h4>
+                    {% for nutri in product.nutrient %}
+                    <div class="detail-nutri">
+                        <dl>
+                            <dt>energy</dt>
+                            <dd>{{ nutri.energy }} </dd>
+                        </dl>
+                        <dl>
+                            <dt>Carbon</dt>
+                            <dd> {{ nutri.carbohd }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>sugar</dt>
+                            <dd> {{ nutri.sugar }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>protein</dt>
+                            <dd> {{ nutri.protein }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>fat</dt>
+                            <dd> {{ nutri.fat }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>water</dt>
+                            <dd> {{ nutri.water }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>vitamin-a</dt>
+                            <dd> {{ nutri.vit_a }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>vita-b6</dt>
+                            <dd> {{ nutri.vit_b6 }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>vita-b12</dt>
+                            <dd> {{ nutri.vit_b12}} </dd>
+                        </dl>
+                        <dl>
+                            <dt>vita-c</dt>
+                            <dd> {{ nutri.vit_c}}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>vita-d</dt>
+                            <dd> {{ nutri.vit_d}}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>Na</dt>
+                            <dd> {{ nutri.na }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>Ca</dt>
+                            <dd> {{ nutri.ca }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>P</dt>
+                            <dd> {{ nutri.p }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>Mg</dt>
+                            <dd> {{ nutri.mg }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>K</dt>
+                            <dd> {{ nutri.k }}  </dd>
+                        </dl>
+                        <dl>
+                            <dt>CI</dt>
+                            <dd> {{ nutri.cl }}  </dd>
+                        </dl>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!--      상품 선택     -->
+                <div class="detail-select">
+                    <dl class="detail-select-title">
+                        <dt> Qty </dt>
+                        <input type="number" class="amount" name="amount" id="amount" onchange="add(this.value)">
+                    </dl>
+                </div>
+
+                <!--      총 상품금액          -->
+                <div class="tot-price-wrap">
+                    <div class="tot-price-box">
+                        <span> Total : </span>
+                        <span class="tot-price" id="tot_price">0 </span>
+                        <span> $ </span>
+                    </div>
+                </div>
+                <div class="b-line"></div>
+                <!--      장바구니에 넣기      -->
+                <div class="cart-in">
+                    <button type="submit">Add to Cart</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!--  ###################### 같이 구매한 리스트  -->
+    <div class="pur-tog-wrap">
+        <h2> Products related to this item </h2>
+        <div class="pur-tog-recomm">
+        <!--    for문 돌기 시작    -->
+        <!--   첫번째      -->
+            {% for pd in recomm_product %}
+            <div class="pur-tog-recomm-5">
+                <div class="pur-tog-img">
+                    <a href="{{ url_for('product.detail', product_id=pd.product_id) }}"><img src="/static/uploads/{{ pd.image }}"></a>
+                </div>
+                <div class="pur-tog-content">
+                    <a href="{{ url_for('product.detail', product_id=pd.product_id) }}">
+                        <span class="pur-tog-title"> {{ pd.product_name}} </span>
+                        <span class="pur-tog-content"> {{ pd.price }} $ </span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            <!--     for문 종료부분       -->
+        </div>
+    </div>
+    <!--  ####################### 관련 레시피 리스트  -->
+    <div class="related-reci-wrap">
+        <h2> Recipe related to this item </h2>
+        <div class="related-reci-recomm">
+        <!--      for문 돌기시작      -->
+        <!--       첫번째 돌기시작     -->
+        <!--     재료가 없을때 준비중 출력       -->
+            {% if product.ingredient.ingred_name == 'None' %}
+            <div class="related-reci-recomm-5">
+                <div class="reci-image-wrap">
+                    <a><img src="https://img-cf.kurly.com/shop/data/board/recipe/r/3eb7da5520cdcf8c"></a>
+                </div>
+                    <a>
+                        <span> 준비중 </span>
+                    </a>
+            </div>
+            <!--      재료가 None값이 아닌경우      -->
+            {% else %}
+            <!--       recipe_ingredients값이 있는경우     -->
+            {% if product.ingredient.recipe_ingredients %}
+            {% for reci_ingre in product.ingredient.recipe_ingredients %}
+            {% if loop.index < 10 %}
+            <div class="related-reci-recomm-5">
+                <div class="reci-image-wrap">
+                    <a href="{{ url_for('recipe.recipe_detail', recipe_id=reci_ingre.recipe.recipe_id )}}">
+                        <img src="/static/uploads_recipe/{{ reci_ingre.recipe.recipe_image }}"></a>
+                </div>
+                    <a href="{{ url_for('recipe.recipe_detail', recipe_id=reci_ingre.recipe.recipe_id )}}">
+                        <span> {{ reci_ingre.recipe.recipe_name }} </span>
+                    </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <!--   recipe_ingredient 테이블에서 결과가 없는경우  준비중 뜨게해라    -->
+            {% else %}
+            <div class="related-reci-recomm-5">
+                <div class="reci-image-wrap">
+                    <a><img src="https://img-cf.kurly.com/shop/data/board/recipe/r/3eb7da5520cdcf8c"></a>
+                </div>
+                    <a>
+                        <span> 준비중 </span>
+                    </a>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
