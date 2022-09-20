@@ -1,0 +1,63 @@
+.prod-up-wrap {
+    width: 1050px;
+    margin: 0px auto;
+    padding-top: 26px;
+}
+
+.prod-up-title h2 {
+    padding: 23px 0px 20px;
+    font-weight: 500;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.prod-up-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.prod-name-wrap, .prod-price-wrap, .prod-desc-wrap, .prod-img-wrap{
+    display: flex;
+    margin: 15px;
+    justify-content: flex-start;
+}
+
+div[class$=-wrap] label:first-child {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.pnum, .pname, .price, .detail, .image {
+    width: 400px;
+    margin-left: 10px;
+}
+
+
+.img-container{
+    width: 300px;
+    height: auto;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.button-regis {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.button-regis button {
+    width: 250px;
+    background-color: var(--main-bg-color);
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+}

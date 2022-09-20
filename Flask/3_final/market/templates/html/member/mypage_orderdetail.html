@@ -1,0 +1,117 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="mypage-container">
+    <!--  마이페이지 카테고리부분  -->
+
+    {% include '/html/product/product_cate.html' %}
+
+    <div class="orderdetail-box-wrap">
+        <div class="orderdetail-box">
+            <!--    for문 주문내역 시작 : 주문내역의 각각 정보를 빼오기   -->
+            {% if orders %}
+            <div class="orderdetail-title-wrap">
+                <div class="orderdetail-title">
+                      <h2>Order details</h2>
+                </div>
+                <div class="bline"></div>
+            </div>
+
+            <div class="orderdetail-ordnum">
+                <h3>Order Number : {{ orders.order_id }}</h3>
+            </div>
+            <div class="orderdetail-list-wrap">
+                <!--      제품리스트 for문 시작      -->
+                {% for od in orders.order_detail %}
+                <div class="orderdetail-list">
+                    <div class="detail-img">
+                        <a href="{{ url_for('product.detail', product_id=od.product.product_id) }}">
+                        <img src="/static/uploads/{{ od.product.image }}">
+                        </a>
+                    </div>
+                    <div class="orderdetail-contents">
+                        <a href="{{ url_for('product.detail', product_id=od.product.product_id) }}">{{ od.product.product_name }}</a>
+                        <div class="orderdetail-price">
+                            <span>{{ od.product.price }} $</span>
+                            <span>{{ od.pamount }} Amount </span>
+                        </div>
+                    </div>
+                    <span>Delivery completed </span>
+                </div>
+                {% endfor %}
+                <!--      제품리스트 for문 종료      -->
+
+            </div>
+            <div class="orderdetail-ship">
+                <h3>Delivery Tracking</h3>
+            </div>
+            <div class="orderdetail-ship-state">
+                <h4>Delivery Completed</h4>
+            </div>
+
+            <div class="orderdetail-pay">
+                <h3>Payment Information</h3>
+            </div>
+            <ul class="orderdetail-pay-state">
+                <li>
+
+                <span>Prices</span>
+                    {% for od in orders.order_detail %}
+                <span>{% set prices= od.product.price * od.pamount %}
+                    {{ prices | round(3) }} $</span>
+                    {% endfor %}
+                </li>
+                <li>
+                <span>Delivery Fee</span>
+                <span> --- $</span>
+                </li>
+                <div class="bline"></div>
+                <li>
+                    <span>결제금액</span>
+                    <span>  {% set lists=[] %}
+                                {% set prices=0 %}
+                                {% for od in (orders.order_detail) %}
+                                    {% set prices = prices + ( od.pamount * od.product.price ) %}
+                                    {{ lists.append(prices) or '' }}
+                                {% endfor %}
+                                {{ lists | sum() | round(3) }} $
+                    </span>
+                </li>
+            </ul>
+
+            <div class="orderdetail-orderinfo">
+                <h3>주문정보</h3>
+            </div>
+            <ul class="orderdetail-info">
+                <li>
+                    <span>받는분</span>
+                    <span>{{ orders.member.name }}</span>
+                </li>
+                <li>
+                    <span>결제일시</span>
+                    <span> -- </span>
+                </li>
+            </ul>
+
+            <div class="orderdetail-orderinfo">
+            <h3>배송정보</h3>
+            </div>
+            <ul class="orderdetail-info">
+                <li>
+                    <span>받는분</span>
+                    <span>{{ orders.member.name}}</span>
+                </li>
+                <li>
+                    <span>핸드폰</span>
+                    <span>{{ orders.member.phnum }}</span>
+                </li>
+                <li>
+                    <span>주소</span>
+                    <span>{{ orders.member.address1 }}</span>
+                    <span>{{ orders.member.address2 }}</span>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+.re-det-box-wrap {
+    width: 1050px;
+    margin: 0px auto;
+    padding-top: 26px;
+}
+
+.re-det-box-title h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.b-line {
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+/* 레시피 이름, 작성자 들어가는 부분 */
+.re-det-title-1, .re-det-title-2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+}
+
+.re-title {
+    font-size: 20px;
+    margin: 20px;
+    width: 100px;
+    height: 25px;
+    padding-left: 20px;
+}
+
+.re-content {
+    padding-left: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+/* 재료, 레시피 순서 들어가는 부분 */
+
+.re-det-desc-2{
+    padding: 150px 10px 10px;
+}
+
+.re-det-desc-title {
+    display: block;
+    font-family: noto sans;
+    font-weight: 700;
+    padding-bottom: 70px;
+    font-size: 50px;
+    line-height: 46px;
+    text-align: center;
+    color: #666;
+}
+
+.re-det-desc-content {
+    margin-bottom: 130px;
+}
+
+.re-det-img {
+    width: 500px;
+    height: auto;
+    margin: 0 auto
+}
+
+.re-det-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.re-det-desc{
+    margin-top: 55px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #373737;
+}
+
+.detail-ingre , .detail-orders {
+    margin-bottom: 40px;
+}
+
+strong{
+    display: block;
+    font-size: 24px;
+    font-family: noto sans;
+    font-weight: 700;
+    color: #666;
+    text-shadow: 1px 0;
+}
+
+
+/* 레시피 재료 추천 부분 */
+.re-det-box-recomm h2{
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+.recipe-recomm-1{
+    height: 300px;
+}
+
+.recipe-recomm-img {
+    margin-left: 20px;
+    width: 178px;
+    height: 229px;
+}
+
+.recipe-recomm-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-recomm-desc{
+    padding-left: 20px;
+    margin: 10px;
+}
+
+.recomm-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #4c4c4c;
+    line-height: 18px;
+}
+
+.recomm-content {
+    font-size: 16px;
+}

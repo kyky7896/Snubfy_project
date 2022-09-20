@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+{% block content %}
+<!--여기 css는 product_create.css 로 넣어주세요 -->
+<div class="prod-up-wrap">
+    <div class="prod-up-title">
+        <h2> Edit Product </h2>
+    </div>
+    <div class="bline"></div>
+    {% if form %}
+    <form action="{{ url_for('product.update', product_id=product.product_id) }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+            <!-- 오류표시 Start -->
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for field, errors in form.errors.items() %}
+            <strong>{{ form[field].label }}</strong>
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <!-- 오류표시 End -->
+        <div class="prod-up-content">
+            <div class="prod-name-wrap">
+                <label for="pname"> Product Name </label>
+                <input type="text" name="product_name" id="pname" class="pname" value="{{ form.product_name.data or '' }}">
+            </div>
+
+            <div class="prod-price-wrap">
+                <label for="price"> Price </label>
+                <input type="number" name="price" id="price" class="price" value="{{ form.price.data or '' }}">
+            </div>
+
+            <div class="prod-desc-wrap">
+                <label for="detail"> Description </label>
+                <input type="text" name="detail" id="detail" class="detail" value="{{ form.detail.data or '' }}">
+            </div>
+
+             <div class="prod-desc-wrap">
+                    <label for="category">Catogory </label>
+                    <select name="cart_num" id="category" >
+                        <option value="0">Choose one</option>
+                            {% for cat in category_set %}
+                            <option value="{{ loop.index }}" {% if loop.index == category.cart_num %}
+                                                                selected="selected"
+                                                                {% endif %}>{{ cat }}</option>
+                            {% endfor %}
+                    </select>
+            </div>
+
+            <div class="prod-img-wrap">
+                <label for="input-image">Image</label>
+                <div class="prod-file">
+                    {{ form.image.data or ''}}
+                    <!--  value직접 접근 안됨 주의 -->
+                    <input type="file" name="image" id="input-image" class="image" >
+                    <div class="img-container">
+                        <img src="/static/uploads/{{ form.image.data }}" id="preview-image">
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+        <div class="button-regis">
+            <button type="submit">Edit</button>
+        </div>
+    </form>
+        <div class="button-regis">
+        <button type="button" onclick="location.href='{{ url_for('product.delete', product_id=product.product_id) }}'">Delete</button>
+        </div>
+</div>
+
+{% endblock %}

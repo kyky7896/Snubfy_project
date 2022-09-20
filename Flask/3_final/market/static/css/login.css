@@ -1,0 +1,33 @@
+.login-wrap {
+    min-width: 1050px;
+    position: relative;
+    margin: 90px auto 60px;
+    text-align: center;
+    height: auto;
+}
+.login-title{
+    margin-bottom: 20px;
+}
+.login-box-1 {
+    /* 가운데 정렬 */
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    height: 450px;
+}
+
+.id, .pwd {
+    margin-bottom: 20px;
+}
+
+.login-sign button {
+    width: 230px;
+    height: 50px;
+    font-size: 16px;
+    color: whitesmoke;
+    background-color: var(--main-bg-color);
+    border-radius: 6px;
+    margin-top: 15px;
+    color: white;
+    font-weight: 500;
+}

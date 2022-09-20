@@ -41,3 +41,4 @@
 * https://github.com/journey101/Ecommerce-Recommendation-System-with-DeepLearning-YoutubeAlgorithm/blob/main/Ecommerce-Recommendation-System-adapting-DeepLearning-Youtube-Algorithm_0417(annotation_updated).ipynb
 * https://brunch.co.kr/@goodvc78/18
 * https://huidea.tistory.com/287
+* https://dbr.donga.com/article/view/1203/article_no/8734

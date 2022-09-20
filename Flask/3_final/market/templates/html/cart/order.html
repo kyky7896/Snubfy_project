@@ -1,0 +1,135 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="order-wrap">
+    <div class="order-box-wrap">
+        <h2>Order</h2>
+        <div class="order-box-list-wrap">
+            <!--      주문상품      -->
+            <div class="order-box-list-title">
+                <h3>Order Product</h3>
+            </div>
+            <!--      주문상품 list for문      -->
+            {% if g.user %}
+                {% for item in cart_list %}
+                    <div class="order-box-list">
+                        <a class="order-img-wrap">
+                            <img src="/static/uploads/{{ item.product.image }}" alt="">
+                        </a>
+                        <span class="order-name">
+                            <span>{{ item.product.product_name }}</span>
+                        </span>
+                        <span class="order-amount">
+                            <span>{{ item.cart_amount }}</span>
+                        </span>
+                        <span class="order-price">
+                            <span>{{ item.product.price }}$</span>
+                        </span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <div class="order-person-title">
+                <h3>Customer Information</h3>
+            </div>
+            <!--      주문자정보 : 클래스명 동일하게 사용하기      -->
+            <div class="order-person-wrap">
+                <div class="order-person">
+                    <span class="orderer-title"> Name </span>
+                    <span class="orderer-content"> 주영 </span>
+                </div>
+                <div class="order-person-tel">
+                    <span class="orderer-title"> Phone Number </span>
+                    <span class="orderer-content"> 01000001234 </span>
+                </div>
+                <div class="order-person-email">
+                    <span class="orderer-title"> Email </span>
+                    <span class="orderer-content"> wn@gmail.com </span>
+                </div>
+            </div>
+            <div class="order-ship-title">
+                <h3>Shipping Information</h3>
+            </div>
+            <!--      배송정보      -->
+            <div class="order-ship-wrap">
+                <div class="order-addr">
+                    <span class="orderer-title"> Shipping Address </span>
+                    <span class="orderer-content"> 경기도 성남시 분당구 </span>
+                </div>
+            </div>
+        </div>
+        <!--  결제 box   -->
+        <div class="payment-box-wrap">
+            <div class="payment-box">
+                <!--      결제수단      -->
+                <div class="order-pay-title">
+                    <h3>Payment Information</h3>
+                </div>
+                <div class="order-pay-wrap">
+                    <div class="order-pay-c-num">
+                        <span class="orderer-title"> Number </span>
+                        <span class="orderer-content"><input type="text"> </span>
+                    </div>
+                    <div class="order-pay-c-cvc">
+                        <span class="orderer-title"> CVC </span>
+                        <span class="orderer-content"><input type="text"> </span>
+                    </div>
+                    <div class="order-pay-c-expired">
+                        <span class="orderer-title"> Card validation date </span>
+                        <span class="orderer-content"><input type="text"> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-price-wrap">
+                <div class="payment-price">
+                    <div class="payment-title">
+                        <h4>Payment Amount</h4>
+                    </div>
+                    <div class="payment-content-wrap">
+                        <div class="payment-content">
+                            <h5>Order Amount</h5>
+                        </div>
+                        <div>
+                            <span>
+                                {{ cart_prod_p }}
+                            </span>
+                            <span>
+                                $
+                            </span>
+                        </div>
+                    </div>
+                     <div class="payment-content-wrap">
+                        <div class="payment-content">
+                            <h5>Shipping Fee</h5>
+                        </div>
+                        <div>
+                            <span> +
+                                10
+                            </span>
+                            <span>
+                                $
+                            </span>
+                        </div>
+                    </div>
+                    <div class="bline"></div>
+                    <div class="payment-content-wrap">
+                        <div class="payment-content">
+                            <h5>Total</h5>
+                        </div>
+                        <div>
+                            <span>
+                                {{ cart_prod_tot_p }}
+                            </span>
+                            <span>
+                                $
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    결제버튼    -->
+        <div class="payment-button">
+            <button>Submit</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
