@@ -26,11 +26,18 @@
 
 
 ### (시도2. SGD를 이용한 추천 - category grouping)
-* 사용 이유: 
+* 사용 이유: RAM초과로 인하여 grouping 진행 -> category끼리 유사도를 측정해서 그들만의 행렬 구성
 * 추천 방식: 유사도 높은 상위 3개의 aisle 품목끼리 행렬을 만들어 유사도 높은 상품 추천 
+* 시도 방식: cosine similarity, jarcard similarity, aisle 상위 3개의 품목끼리 행렬 구성 / aisle 상위 5개의 품목끼리 행렬 구성
 
 ### (시도3 SGD를 이용한 추천 - user grouping)
-* 사용 이유: 
-* 추천 방식: 
+* 사용 이유: RAM초과로 인하여 grouping 진행 -> 유저를 군집화하여 그들 사이에서 추천
+* 추천 방식: 4개의 그룹으로 나눠 df를 구성 -> 각 시간대에 속하는 유저의 집단에서 상품 추천
+* 시도 방식: 평일 9~18시, 주말 9~18시, 평일 18시~9시, 주말 18시~9시 4개의 그룹으로 나누어 진행
 
-#### 참고 사이트
+#### 참고 사이트 및 공부 자료
+* https://www.kaggle.com/code/bbksjdd/instacart-market-basket-analysis 
+* https://www.kaggle.com/chocozzz/code
+* https://github.com/journey101/Ecommerce-Recommendation-System-with-DeepLearning-YoutubeAlgorithm/blob/main/Ecommerce-Recommendation-System-adapting-DeepLearning-Youtube-Algorithm_0417(annotation_updated).ipynb
+* https://brunch.co.kr/@goodvc78/18
+* https://huidea.tistory.com/287
