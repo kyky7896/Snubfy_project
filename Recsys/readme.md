@@ -16,18 +16,20 @@
 * 추천 방식: 해당 상품을 샀던 고객이 같이 구매한 상품을 보여주는 방식(아이템간 유사도를 측정하여 추천해주는 형태)
 
 ### 5. 구매 내역에 따른 item 추천(WORD2VEC 이용)
-* 사용 이유: 
-* 추천 방식: 
+* 사용 이유: 사용자가 상품을 담는 순서에도 의미가 있을 것. 주문, 장바구니 상품을 토대로 다음 상품 예측해보기
+* 추천 방식: gensim의 word2vec 모델을 이용하여 가장 유사도 높은 상품 추천
 
 ### (시도1. Content-based model을 이용한 추천)
-* 사용 이유: 
-* 추천 방식: 
+* 사용 이유: cold start(item) 문제 해결
+* 추천 방식: 상품명 입력 시, content 기반 유사도 높은 상품 추천
+* 예)![image](https://user-images.githubusercontent.com/102525066/191288012-54eb64cc-e44c-4013-b11e-b3a9da55e8aa.png)
+
 
 ### (시도2. SGD를 이용한 추천 - category grouping)
 * 사용 이유: 
 * 추천 방식: 
 
-### (시도3 SGD를 이용한 추천 - usser grouping)
+### (시도3 SGD를 이용한 추천 - user grouping)
 * 사용 이유: 
 * 추천 방식: 
 
