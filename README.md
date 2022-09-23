@@ -1,4 +1,4 @@
-# Snupfy_project
+# Snubfy_project
 
 ## SNuBFY : Search for Nutrient-Based Food for You
 
