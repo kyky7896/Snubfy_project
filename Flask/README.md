@@ -39,8 +39,8 @@ Back과 Front 합친 파일입니다.
       <details>
       <summary> 로그인 이전 </summary>
       <div markdown="1">  
+        
         ( 이전, 이후 공통 ) 가장 많이 팔린 제품 TOP 30 중, 랜덤 9개 제품 보여짐.
-
       ![image](https://user-images.githubusercontent.com/77670592/191904521-2293d835-09f6-4703-bdfe-0e74580cc003.png)  
 
       </div>
@@ -50,8 +50,9 @@ Back과 Front 합친 파일입니다.
       <summary> 로그인 이후 </summary>
       <div markdown="1">  
         
-        ( 신규회원 - 주문한 적이 없는 회원 ) 할인제품
-        
+        ( 신규회원 - 주문한 적이 없는 회원 ) 할인제품  
+      ![image](https://user-images.githubusercontent.com/77670592/191947252-f9b7ec96-1cc3-4251-83df-1c603f354efe.png)
+
 
         
         ( 기존회원 - 주문한 적이 있는 회원 ) 주문한 제품 기반의 추천 제품
