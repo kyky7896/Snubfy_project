@@ -138,7 +138,7 @@ Link:
 
 사용 및 경험 언어: Python, MySQL, HTML, CSS, JAVA, Spring, JavaScript, Flask
 
-### 🎄 주차별 세부 역할(확인/논의 필요)
+### 🎄 주차별 세부 역할
 
 - 1주차(팀 전체): 프로젝트 주제 선정, 기획안 작성, 데이터 준비
 - 2주차
