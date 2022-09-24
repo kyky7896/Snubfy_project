@@ -1,9 +1,5 @@
 # Search for Netrient-Balanced Food for You : SNuBFY
 
-1. [Intro](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2.md)
-2. [Project](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2.md)
-3. [Members](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2.md)
-
 Git-Hub: 
 
 Link:
