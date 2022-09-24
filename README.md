@@ -6,8 +6,6 @@ Link:
 
 # 1. INTRO
 
----
-
 ### 🎄 팀 소개
 
 - 팀명 :  SNubFy(Search for Nutrient-Balanced Food for you)
@@ -47,11 +45,8 @@ Link:
 
 # 2. PROJECT
 
----
-
 ## ✅ 요구사항
 
----
 
 ### 🎄 웹 기능
 
@@ -79,8 +74,6 @@ Link:
 
 ## ✅ Service
 
----
-
 ### 🎄 메인 추천 기능
 
 - 기존 회원: 구매 이력을 토대로 선호 식품 혹은 취향이 비슷한 사람들의 구매 상품을 추천
@@ -102,8 +95,6 @@ Link:
 
 ## ✅ Stack
 
----
-
 - 크롤링 작업, 알고리즘 구성: Python
 - 데이터 전처리: Pandas, Numpy
 - 사용 모델:  CF, Word2vec 등
@@ -112,7 +103,6 @@ Link:
 
 ## ✅ Flow Chart
 
----
 
 ![Bro-Kurly2x_(1)](https://user-images.githubusercontent.com/77670592/192084165-206775d4-ceee-472c-ad83-66a2366f9c5f.png)
 
@@ -134,8 +124,6 @@ Link:
 장바구니 상품에 만족하지 않을 경우, 다시 상품 둘러보기 페이지로 이동
 
 # 3. MEMBERS
-
----
 
 ### 🎄 팀원 소개
 
