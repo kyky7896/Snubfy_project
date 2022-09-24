@@ -152,8 +152,6 @@ Link:
 
 ### 🎄 주차별 세부 역할(확인/논의 필요)
 
-[스케줄](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8C%E1%85%AE%E1%86%AF%200c784c4f0d384ff59c3e8ca5dade54fc.csv)
-
 - 1주차(팀 전체): 프로젝트 주제 선정, 기획안 작성, 데이터 준비
 - 2주차
     - 데이터 전처리: 김보람, 박선민
@@ -197,14 +195,8 @@ Link:
 
 ---
 
-[회의록 ](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/%E1%84%92%E1%85%AC%E1%84%8B%E1%85%B4%E1%84%85%E1%85%A9%E1%86%A8%201c66ff825c614e6c869a1a278a145589.md)
+[회의록 ](https://iris-unicorn-3d1.notion.site/1c66ff825c614e6c869a1a278a145589)
 
-[코딩규칙](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B5%E1%86%BC%E1%84%80%E1%85%B2%E1%84%8E%E1%85%B5%E1%86%A8%20755d503f55dd456aa3dfaa984d344900.md)
+[트러블슈팅 관련](https://iris-unicorn-3d1.notion.site/09599bf1304142f6b9fd7ba8b13c26b1)
 
-[Complete](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/Complete%20e9491dc01a114627811ad74f91014ff2.md)
-
-[트러블슈팅 관련](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/%E1%84%90%E1%85%B3%E1%84%85%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF%E1%84%89%E1%85%B2%E1%84%90%E1%85%B5%E1%86%BC%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%A7%E1%86%AB%2009599bf1304142f6b9fd7ba8b13c26b1.md)
-
-[데이터 처리 및 추천시스템 구현](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%8E%E1%85%A5%E1%84%85%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%20%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB%20af1359ce022642aaa2b0137b98c9d02e.md)
-
-[Dataset](Search%20for%20Netrient-Balanced%20Food%20for%20You%20SNuBFY%2010fa4a9b97714d1a86f0708ede1508d2/Dataset%20a71f4dd5964e4289a3795a2c2693c04f.md)
+[Dataset](https://iris-unicorn-3d1.notion.site/Dataset-a71f4dd5964e4289a3795a2c2693c04f)
