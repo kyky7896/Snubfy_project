@@ -33,11 +33,7 @@
 ### (시도3 SGD를 이용한 추천 - user grouping)
 * 사용 이유: RAM초과로 인하여 grouping 진행 -> 유저를 군집화하여 그들 사이에서 추천
 * 추천 방식: 4개의 그룹으로 나눠 df를 구성 -> 각 시간대에 속하는 유저의 집단에서 상품 추천
-<<<<<<< HEAD
-* 시도 방식: 평일 9~18시, 주말 9~18시, 평일 18시~9시, 주말 18시~9시 4개의 그룹으로 나누어 진행
-=======
 * 시도 방식: 평일 9 ~ 18시, 주말 9 ~ 18시, 평일 18 ~ 9시, 주말 18 ~ 9시 4개의 그룹으로 나누어 진행
->>>>>>> 445f538415d3933e09ed327a9bfd0e92920c22ef
 
 #### 참고 사이트 및 공부 자료
 * https://www.kaggle.com/code/bbksjdd/instacart-market-basket-analysis 
@@ -45,8 +41,4 @@
 * https://github.com/journey101/Ecommerce-Recommendation-System-with-DeepLearning-YoutubeAlgorithm/blob/main/Ecommerce-Recommendation-System-adapting-DeepLearning-Youtube-Algorithm_0417(annotation_updated).ipynb
 * https://brunch.co.kr/@goodvc78/18
 * https://huidea.tistory.com/287
-<<<<<<< HEAD
 * https://dbr.donga.com/article/view/1203/article_no/8734
-=======
-* https://dbr.donga.com/article/view/1203/article_no/8734
->>>>>>> 445f538415d3933e09ed327a9bfd0e92920c22ef
