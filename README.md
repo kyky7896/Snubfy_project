@@ -1,9 +1,4 @@
 # Search for Netrient-Balanced Food for You : SNuBFY
-
-Git-Hub: 
-
-Link:
-
 # 1. INTRO
 
 ### 🎄 팀 소개
@@ -179,9 +174,7 @@ Link:
 - 장바구니 - 배송지 주소 수정, 상품 목록, 수정, 삭제, 수량, 금액, 최종 결제 금액, 영양소 분석, 영양소 추천 상품, 결제 수단(카드) 정보 기입, 주문하기
 - 결제- 카드 비밀번호 입력(임의로 입력) , 결제 버튼, 결제 취소 버튼
 
----
 
----
 
 [회의록 ](https://iris-unicorn-3d1.notion.site/1c66ff825c614e6c869a1a278a145589)
 
